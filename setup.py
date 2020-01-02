@@ -19,14 +19,14 @@ options = {
 executables = [
     Executable('server.py',
                base='console',
-               targetName='PowerSimApp.exe')
+               targetName='EPSDesignTool.exe')
 ]
 
 setup(
-    name='PowerSimulationTool',
+    name='EPSDesignTool',
     packages=find_packages(),
-    version='0.4.0',
-    description='Power Simulation Tool 2019',
+    version='0.2.0',
+    description='EPS Design Tool Beta',
     executables=executables,
     options=options
 )
