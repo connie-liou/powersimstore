@@ -150,7 +150,6 @@ def generateSpinnerList(rpm: float, numSides: int, timeStep: float, endTime: flo
     This function generates sun angles for a spinner spacecraft. These sun angles take the place of what would be a user input sun angle list.
     The list will be for the duration of the simulation
     '''
-    
     offsetAngle = 360/numSides
     sunAngleList = [[0] for _ in range(numSides)]
 

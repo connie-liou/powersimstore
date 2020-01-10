@@ -724,14 +724,22 @@ def layout(app):
                                     ])
                                 ], className='save-container'),  # input container
                                 html.Div([
-                                    daq.NumericInput(
-                                        id='rpm',
-                                        label='RPM',
-                                        labelPosition='top',
-                                        max=10000,
-                                        min=0,
-                                        value=0,
-                                    ),
+
+                                    html.Div([
+                                    dbc.FormGroup(
+                                        [
+                                            dbc.Label('RPM'),
+                                            dbc.Input(
+                                                type = "number", 
+                                                min = 0, 
+                                                max = 100000, 
+                                                step=0.0001,
+                                                id = 'rpm',
+                                                value=0,
+                                                className = 'styled-numeric-input',
+                                                debounce=True)
+                                        ]),
+                                ]),
                                 ], className='save-container', id='spinner-inputs'),
                                 html.Div([
                                     html.P("Temperature Factors"),
@@ -1488,7 +1496,12 @@ def layout(app):
                 **Make sure this interval is smaller than the interval at which you specify load profile or sun angles in order to make full use of the given data.**
 
                 __*LEO:*__ The simulation starts at the orbit’s noon point (middle of sun time). Changing the start time will change this starting position, i.e. If you had a 90 min orbit with a 40 min eclipse, you can adjust to start at the beginning of an eclipse by setting your start time at 25 mins.
+                '''
+                ],className='modal-text'),
 
+                html.Img(src=app.get_asset_url('eclipse graphic.png'), width = '350px'),
+
+                dcc.Markdown(['''
                 __*L1/L2:*__ The specified eclipse time will occur relative to the given start and end times. It is a one time eclipse that does not occur periodically. 
                 The distance factors used are: 
                 * L1:(149.6/(148.11+2.5))**2

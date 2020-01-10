@@ -409,6 +409,9 @@ def masterCallback(app):
                     raise ValueError('Invalid EOL Factors')
                 if (startTime > endTime):
                     raise ValueError('Start Time is greater than End Time')
+
+                if (useSpinner and useSimpleSolar):
+                    raise ValueError ('Cannot use Simple Solar Model and Spinner at same time')
                 # if (eclipseTime > period):
                 #     raise ValueError('Eclipse Length is greater than Orbit Period')       
                 '''
@@ -436,6 +439,7 @@ def masterCallback(app):
                         i = i + 1
 
                     array = SolarArray(solarWingList, lineDropSA, efficiencyVal)
+                    useSunAngles = True
 
                 elif useSunAngles:  # using sun angles and not a spinner
 
