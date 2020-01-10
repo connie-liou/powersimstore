@@ -10,7 +10,7 @@ options = {
         ],
         'include_files':['assets/', 'Presets/', 'classes/'],
         'packages': [
-            'asyncio', 'flask', 'jinja2', 'dash', 'plotly', 'waitress'
+            'asyncio', 'flask', 'jinja2', 'dash', 'plotly', 'waitress', 'numpy', 'pandas'
         ],
         'excludes': ['tkinter']
     }
