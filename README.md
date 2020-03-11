@@ -1,3 +1,4 @@
 # PowerSimulationV2
-# Install requirements.txt
-# Run "server.py"
+Install requirements.txt
+
+Run "server.py"
