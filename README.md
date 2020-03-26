@@ -1,6 +1,8 @@
 # PowerSimulationV2
 This is a backup repository for GSFC ETD GitLab
 
-Install requirements.txt
+Install requirements.txt: "pip install -r requirements.txt"
 
-Run "server.py"
+Run "python server.py"
+
+Paste link into browser
